@@ -1,5 +1,5 @@
 window.onload = function () {
-
+   timerId();
 }
 
 function despertador() {
@@ -16,16 +16,9 @@ function tomarAgua() {
    alert('Hora de tomar Agua!')
 }
 
-function start() {
-   timerId();
-}
-
 let timerId = function () {
-   setInterval(function () {
-      tomarAgua()
-   }, 10000)
+   setTimeout(tomarAgua, 10000)
 }
-
 
 function loading() {
    console.log('teste')
