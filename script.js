@@ -1,6 +1,8 @@
 window.onload = function () {
    // timerId()
+   teste6()
    fetchAPI()
+   getFetch()
 }
 
 function despertador() {
@@ -57,11 +59,19 @@ function trocaTexto() {
 //    setTimeout(Escrever, 5000);
 // }
 
+function teste6() {
+   let i = 0;
+   setTimeout(() => alert(i), 100); // ?
+   for (let j = 0; j < 100000000; j++) {
+      i++;
+   }
+   console.log('Depois do loop')
+}
+
 function fetchAPI() {
    fetch('./alimento.json')
       .then(response => response.json())
       .then(function (data) {
-         console.log(data.results)
          for (let i = 0; i < data.results.length; i++) {
             // criando a <div> titulo
             let divTitle = document.createElement("DIV")
@@ -89,3 +99,12 @@ function fetchAPI() {
          }
       })
 }
+
+async function getUserAsync() {
+   let response = await fetch('alimento.json');
+   let data = await response.json()
+   return data;
+}
+
+getUserAsync('yourUsernameHere')
+   .then(data => console.log(data));

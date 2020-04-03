@@ -14,13 +14,19 @@
    }
 
    a.display {
-      border: 1px solid lightgray;
+      width: auto;
+      color: unset;
       display: grid;
-      width: 250px;
-      grid-template-rows: auto;
+      grid-gap: 5px;
       text-align: center;
       text-decoration: none;
-      color: unset;
+      grid-template-rows: auto;
+      border: 1px solid lightgray;
+   }
+
+   a.display:hover {
+      opacity: 0.8;
+      background-color: #eeeeee;
    }
 
    #alimentos div {
@@ -34,9 +40,9 @@
    }
 
    #alimentos span {
-      font-style: italic;
-      font-size: 16px;
       color: gray;
+      font-size: 16px;
+      font-style: italic;
    }
 </style>
 
@@ -59,16 +65,26 @@
    </div>
    <div class="grid">
       <h4>Numero - 4</h4>
-      <button onclick="loading()">Carregar</button>
+      <button onclick="loading()">numeros</button>
       <p id="numeros"></p>
    </div>
    <div class="grid">
       <h4>Numero - 5</h4>
-      <button onclick="loading()">Carregar</button>
+      <button onclick="loading()">loagind</button>
+      <p id="numeros"></p>
+   </div>
+   <div class="grid">
+      <h4>Numero - 6</h4>
+      <button onclick="loading()">clique aqui</button>
       <p id="numeros"></p>
    </div>
    <div class="grid">
       <h4>Numero - 7</h4>
+      <p id="alimentos">
+      </p>
+   </div>
+   <div class="grid">
+      <h4>Numero - 8</h4>
       <p id="alimentos">
       </p>
    </div>
