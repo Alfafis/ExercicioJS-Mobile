@@ -3,6 +3,8 @@ window.onload = function () {
    teste6()
    fetchAPI()
    getFetch()
+   escrevaNumeros()
+   escrevaNumeros2()
 }
 
 function despertador() {
@@ -36,28 +38,27 @@ function trocaTexto() {
 
 }
 
-// let inicio = document.getElementById('inicio').value;
-// let final = document.getElementById('final').value;
-// let aux = inicio;
+function escrevaNumeros(params) {
 
-// function escrevaNumeros() {
-//    if (aux < final) {
-//       Alert();
-//    } else {
-//       break
-//    }
-// }
+}
 
-// function Escrever() {
-//    var para = document.createElement("P");
-//    para.innerText = aux;
-//    document.body.appendChild(para);
-//    escrevaNumeros();
-// }
+function escrevaNumeros2() {
+   let numero1 = prompt("Escolha o numero Inicial: ")
+   let numero2 = prompt("Escolha o numero Final: ")
+   setTimeout(function aninhado() {
+      if (numero1 <= numero2) {
+         let x = numero1;
+         const numberAlter = document.getElementById("numerosAlter");
+         const livre = document.createElement("p");
 
-// function Alert() {
-//    setTimeout(Escrever, 5000);
-// }
+         livre.innerHTML = x;
+         numberAlter.appendChild(livre);
+         console.log(numero1)
+      }
+      numero1++
+      setTimeout(aninhado, 1000);
+   }, 1000);
+}
 
 function teste6() {
    let i = 0;
