@@ -1,10 +1,8 @@
 window.onload = function () {
-   // timerId()
+   timerId()
    teste6()
    fetchAPI()
-   getFetch()
-   escrevaNumeros()
-   escrevaNumeros2()
+   getAsync()
 }
 
 function despertador() {
@@ -38,27 +36,58 @@ function trocaTexto() {
 
 }
 
-function escrevaNumeros(params) {
+aux2 = -1
 
+function escrevaNumeros() {
+   const inicio = document.querySelector('.inicio').value
+   const final = document.querySelector('.final').value
+   aux = inicio
+   aux2++
+   aux = +aux2
+   if (aux <= final) {
+      Alert()
+   } else {
+      console.log('voce chegou ao fim')
+      let tagP = document.createElement("P")
+      tagP.innerText = "Chegou ao fim"
+      document.getElementById('preencher').appendChild(tagP)
+      aux = 0
+      aux2 = -1
+   }
 }
+
+
+function Escrever() {
+   let tagP = document.createElement("P")
+   tagP.innerText = aux
+   console.log(aux)
+   console.log(tagP)
+   document.getElementById('preencher').appendChild(tagP)
+   escrevaNumeros()
+}
+
+function Alert() {
+   let tempo = setTimeout(Escrever, 1000)
+}
+
 
 function escrevaNumeros2() {
-   let numero1 = prompt("Escolha o numero Inicial: ")
-   let numero2 = prompt("Escolha o numero Final: ")
-   setTimeout(function aninhado() {
-      if (numero1 <= numero2) {
-         let x = numero1;
-         const numberAlter = document.getElementById("numerosAlter");
-         const livre = document.createElement("p");
-
-         livre.innerHTML = x;
-         numberAlter.appendChild(livre);
-         console.log(numero1)
+   let inicio = document.querySelector('.inicio').value
+   let final = document.querySelector('.final').value
+   var intervalo = setInterval(() => {
+      if (inicio <= final) {
+         console.log(inicio)
+         console.log(final)
+         let tagP = document.createElement("P")
+         tagP.innerText = inicio
+         document.getElementById('preencher2').appendChild(tagP)
+      } else {
+         clearInterval(intervalo)
       }
-      numero1++
-      setTimeout(aninhado, 1000);
-   }, 1000);
+      ++inicio
+   }, 1000)
 }
+
 
 function teste6() {
    let i = 0;
@@ -101,11 +130,12 @@ function fetchAPI() {
       })
 }
 
-async function getUserAsync() {
-   let response = await fetch('alimento.json');
-   let data = await response.json()
-   return data;
+async function getAsync() {
+   console.log('Usando Async Wait')
+   await fetch('alimento.json').then(async (response) => {
+      return await response.json()
+         .then(function (data) {
+            console.log(data.results)
+         })
+   })
 }
-
-getUserAsync('yourUsernameHere')
-   .then(data => console.log(data));

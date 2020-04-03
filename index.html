@@ -48,14 +48,14 @@
 
 <body>
    <div class="grid">
-      <h4>Numero - 1</h4>
+      <h4>Numero 1</h4>
       <span>digite o tempo para o despertar: </span>
       <input type="number" name="" id="despertador">
       <span> em segundos</span><br />
       <button onclick="despertar()">Registrar</button>
    </div>
    <div class="grid">
-      <h4>Numero - 2</h4>
+      <h4>Numero 2</h4>
       <span>Fique ligado no alarme de tomar agua!</span><br />
    </div>
    <div class="grid">
@@ -64,28 +64,37 @@
       <p id="loading"></p>
    </div>
    <div class="grid">
-      <h4>Numero - 4</h4>
-      <button onclick="loading()">numeros</button>
-      <p id="numeros"></p>
+      <h4>Numero 4</h4>
+      <label>introduza o primeiro valor: </label>
+      <input type="number" class="inicio" /><br />
+      <label>introduza o segundo valor: </label>
+      <input type="number" class="final" /><br />
+      <button onclick="escrevaNumeros()">Disperar numero</button>
+      <p id="preencher">
+         <label>setTimeout:</label>
+      </p>
    </div>
    <div class="grid">
-      <h4>Numero - 5</h4>
-      <button onclick="loading()">loagind</button>
-      <p id="numerosAlter"></p>
+      <h4>Numero 5</h4>
+      <button onclick="escrevaNumeros2()">Disperar numero</button>
+      <p id="preencher2">
+         <label>setInterval:</label>
+      </p>
    </div>
    <div class="grid">
-      <h4>Numero - 6</h4>
+      <h4>Numero 6</h4>
       <button onclick="loading()">clique aqui</button>
       <p id="numeros"></p>
    </div>
    <div class="grid">
-      <h4>Numero - 7</h4>
+      <h4>Numero 7</h4>
       <p id="alimentos">
       </p>
    </div>
    <div class="grid">
-      <h4>Numero - 8</h4>
-      <p id="alimentos">
+      <h4>Numero 8</h4>
+      <p id="newAlimentos">
+         olhe o console
       </p>
    </div>
 
