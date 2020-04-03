@@ -6,6 +6,39 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Document</title>
 </head>
+<style>
+   p#alimentos {
+      display: grid;
+      grid-gap: 20px;
+      grid-template-columns: auto auto auto auto auto;
+   }
+
+   a.display {
+      border: 1px solid lightgray;
+      display: grid;
+      width: 250px;
+      grid-template-rows: auto;
+      text-align: center;
+      text-decoration: none;
+      color: unset;
+   }
+
+   #alimentos div {
+      font-size: 18px;
+      font-weight: bold;
+   }
+
+   #alimentos img {
+      margin: 0 auto;
+
+   }
+
+   #alimentos span {
+      font-style: italic;
+      font-size: 16px;
+      color: gray;
+   }
+</style>
 
 <body>
    <div class="grid">
@@ -28,6 +61,16 @@
       <h4>Numero - 4</h4>
       <button onclick="loading()">Carregar</button>
       <p id="numeros"></p>
+   </div>
+   <div class="grid">
+      <h4>Numero - 5</h4>
+      <button onclick="loading()">Carregar</button>
+      <p id="numeros"></p>
+   </div>
+   <div class="grid">
+      <h4>Numero - 7</h4>
+      <p id="alimentos">
+      </p>
    </div>
 
 </body>
